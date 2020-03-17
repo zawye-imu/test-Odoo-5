@@ -9,7 +9,7 @@
 
 
                 <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
-                    <field name="discount"/>
+                    <field name="p_discount"/>
                 </xpath>
                
             </field>
