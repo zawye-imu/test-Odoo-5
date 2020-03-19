@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <data noupdate="0">
+        
+        <record id="user_se1" model="res.users">
+            <field name="name">Sale Executive 1</field>
+            <field name="login">SaleExecutive1@gmail.com</field>
+            <field name="password">asd123!@#</field>
+            <field name="sel_groups_1_8_9">1</field>
+            <field name="in_group_7" eval="False" />
+        </record>
+            
+    
+        
+        
+            
+        <record id="sale_executive_group_1" model="res.groups">
+            <field name="category_id" ref="base.module_category_sales" />
+            <field name="name">Popular Sales Executives</field>
+            <field name="users" search="[('name','=','Sale Executive 1')]" />
+            <field name="menu_access" eval="[[ref('sale.menu_report_product_all')]]" />
+
+
+        </record>
+            
+            
+  
+            
+         
+            
+            
+    
+        
+
+        
+        
+                
+                
+                
+                
+    </data>
+</odoo>
