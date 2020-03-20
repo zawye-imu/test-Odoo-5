@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
         <data noupdate="0">
-        
+            
+
+            
+            
+<!--  The following all realtes with the sales executive role -->
+            
         <record id="user_se1" model="res.users">
             <field name="name">Sale Executive 1</field>
             <field name="login">SaleExecutive1@gmail.com</field>
@@ -19,25 +23,122 @@
             <field name="category_id" ref="base.module_category_sales" />
             <field name="name">Popular Sales Executives</field>
             <field name="users" search="[('name','=','Sale Executive 1')]" />
-            <field name="menu_access" eval="[[ref('sale.menu_report_product_all')]]" />
+            
 
 
+        </record>    
+            
+            
+            
+            
+          
+            
+<!--             This part is about the menus -->
+    <menuitem id="new_sale_menu" name="Sales(executives)" web_icon="sale_management,static/description/icon.png" groups="sale_executive_group_1"/>
+    <menuitem id="new_sale_menu_reporting" name="Reporting" parent="new_sale_menu" />
+    <menuitem id="new_sale_menu_orders" name="Orders" parent="new_sale_menu" />      
+    <menuitem id="new_sale_menu_reporting_1" name="Sales" parent="new_sale_menu_reporting" action="sale_enterprise.sale_report_action_dashboard" /> 
+    <menuitem id="new_sale_menu_orders_1" name="Orders" parent="new_sale_menu_orders" action="sale.action_orders" />
+            
+            
+            
+            
+<!--             Record rule assign -->
+            
+ <record model="ir.rule" id="sales_executives_rules1">
+             <field name="name">Own Orders</field>
+             <field name="model_id" ref="sale.model_sale_order"></field>
+             <field name="groups" eval="[(4,ref('sale_executive_group_1'))]"></field>
+             <field name="domain_force">['|',('user_id','=',False),('user_id','=',user.id)]</field>
+             <field eval="1" name="perm_read"></field>   
+             <field eval="1" name="perm_write"></field> 
+             <field eval="1" name="perm_unlink"></field>
+             <field eval="1" name="perm_create"></field>
+     </record>  
+
+ <record model="ir.rule" id="sales_executives_rules2">
+             <field name="name">Own Report</field>
+             <field name="model_id" ref="sale.model_sale_report"></field>
+             <field name="groups" eval="[(4,ref('sale_executive_group_1'))]"></field>
+             <field name="domain_force">['|',('user_id','=',False),('user_id','=',user.id)]</field>
+             <field eval="1" name="perm_read"></field>   
+             <field eval="1" name="perm_write"></field> 
+             <field eval="1" name="perm_unlink"></field>
+             <field eval="1" name="perm_create"></field>
+     </record>  
+
+     <record model="ir.rule" id="sales_executives_rules3">
+             <field name="name">Team Order Lines</field>
+             <field name="model_id" ref="sale.model_sale_order_line"></field>
+             <field name="groups" eval="[(4,ref('sale_executive_group_1'))]"></field>
+             <field name="domain_force">['|',('salesman_id','=',False),('salesman_id','=',user.id)]</field>
+             <field eval="1" name="perm_read"></field>   
+             <field eval="1" name="perm_write"></field> 
+             <field eval="1" name="perm_unlink"></field>
+             <field eval="1" name="perm_create"></field>
+     </record>  
+            
+            
+
+            
+<!-- The following all relates witht the sales manager role -->
+            
+         <record id="user_sm1" model="res.users">
+            <field name="name">Sales Manager 1</field>
+            <field name="login">sm.test@gmail.com</field>
+            <field name="password">asd123!@#</field>
+            <field name="sel_groups_1_8_9">1</field>
+            <field name="in_group_7" eval="False" />
         </record>
-            
-            
-  
-            
-         
-            
             
     
         
+        
+            
+        <record id="sale_manager_group_1" model="res.groups">
+            <field name="category_id" ref="base.module_category_sales" />
+            <field name="name">Popular Sales Manager</field>
+            <field name="users" search="[('name','=','Sales Manager 1')]" />
+            
 
-        
-        
-                
-                
-                
+
+        </record>    
+            
+ <!--             This part is about the menus -->
+    <menuitem id="new_sale_menu_m" name="Sales(managers)" web_icon="sale_management,static/description/icon.png" groups="sale_manager_group_1"/>
+    <menuitem id="new_sale_menu_m_contacts" name="Contacts" parent="new_sale_menu_m" />
+    <menuitem id="new_sale_menu_m_reporting" name="Team" parent="new_sale_menu_m" />      
+    <menuitem id="new_sale_menu_m_contacts_1" name="Contacts" parent="new_sale_menu_m_contacts" action="contacts.action_contacts" /> 
+    <menuitem id="new_sale_menu_m_reporting_1" name="Sales Team" parent="new_sale_menu_reporting" action="sales_team.crm_team_salesteams_act" /> 
+
+            
+
+ <!--             Record rule assign -->
+            
+     <record model="ir.rule" id="sales_managers_rules1">
+             <field name="name">Own Team Report</field>
+             <field name="model_id" ref="sales_team.model_crm_team"></field>
+             <field name="groups" eval="[(4,ref('sale_manager_group_1'))]"></field>
+             <field name="domain_force">['|',('user_id','=',False),('user_id','=',user.id)]</field>
+             <field eval="1" name="perm_read"></field>   
+             <field eval="0" name="perm_write"></field> 
+             <field eval="0" name="perm_unlink"></field>
+             <field eval="0" name="perm_create"></field>
+     </record>  
+            
+ 
+<!--             Sales team create and addition -->
+            
+         <record id="sales_team_1" model="crm.team">
+            <field name="name">Team Alpha</field>
+            <field name="user_id" ref="user_sm1" />
+            <field name="member_ids" eval="[(4,ref('user_se1'))]" />
+            
+
+
+        </record>    
+            
+            
                 
     </data>
 </odoo>

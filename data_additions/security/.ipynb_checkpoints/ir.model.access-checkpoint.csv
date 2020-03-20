@@ -1,2 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-data_addition2,sale_order_view,sale.model_sale_order,data_addition.sale_executive_group_1,1,1,1,1
+data_addition2,sale_order_view,sale.model_sale_order,data_additions.sale_executive_group_1,1,1,1,1
+data_addition3,saving_order,stock.model_stock_picking,data_additions.sale_executive_group_1,1,0,0,0
+data_addition4,sale_analysis,sale.model_sale_report,data_additions.sale_executive_group_1,1,0,0,0
+data_addition5,sale_order_line,sale.model_sale_order_line,data_additions.sale_executive_group_1,1,1,1,1
+data_addition6,stock_move,stock.model_stock_move,data_additions.sale_executive_group_1,1,1,0,0
+data_addition7,manager sales order,sale.model_sale_order,data_additions.sale_manager_group_1,1,1,1,0
+data_addition8,manager report,sale.model_sale_report,data_additions.sale_manager_group_1,1,0,0,0
+data_addition9,manager team,sales_team.model_crm_team,data_additions.sale_manager_group_1,1,1,1,0
