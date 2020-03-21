@@ -7,3 +7,16 @@ data_addition6,stock_move,stock.model_stock_move,data_additions.sale_executive_g
 data_addition7,manager sales order,sale.model_sale_order,data_additions.sale_manager_group_1,1,1,1,0
 data_addition8,manager report,sale.model_sale_report,data_additions.sale_manager_group_1,1,0,0,0
 data_addition9,manager team,sales_team.model_crm_team,data_additions.sale_manager_group_1,1,1,1,0
+data_addition10,warehouse admin order,purchase.model_purchase_order,data_additions.warehouse_admin_group_1,1,1,1,1
+data_addition11,warehouse admin inventory view,stock.model_stock_picking,data_additions.warehouse_admin_group_1,1,0,0,0
+data_addition12,warehouse admin saving,account.model_account_move_line,data_additions.warehouse_admin_group_1,1,1,1,0
+data_addition13,warehouse admin order line,purchase.model_purchase_order_line,data_additions.warehouse_admin_group_1,1,1,1,0
+data_addition14,warehouse admin purchase report,purchase.model_purchase_report,data_additions.warehouse_admin_group_1,1,0,0,0
+data_addition15,warehouse admin saving,stock.model_stock_move,data_additions.warehouse_admin_group_1,1,1,1,0
+data_addition16,warehouse admin scrap,stock.model_stock_scrap,data_additions.warehouse_admin_group_1,1,1,1,0
+data_addition17,warehouse manager order,purchase.model_purchase_order,data_additions.warehouse_manager_group_1,1,1,1,0
+data_addition18,warehouse manager approve,stock.model_stock_picking,data_additions.warehouse_manager_group_1,1,1,1,0
+data_addition19,warehouse manager see line,account.model_account_move_line,data_additions.warehouse_manager_group_1,1,0,0,0
+data_addition20,warehouse manager order line,purchase.model_purchase_order_line,data_additions.warehouse_manager_group_1,1,1,1,0
+data_addition21,warehouse manager report,purchase.model_purchase_report,data_additions.warehouse_manager_group_1,1,1,1,0
+data_addition22,warehouse manager see line 2,stock.model_stock_move,data_additions.warehouse_manager_group_1,1,1,1,0

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <data noupdate="0">
+            
+            
+            
+        <record id="user_wm1" model="res.users">
+            <field name="name">Warehouse Manager 1</field>
+            <field name="login">wm.test@gmail.com</field>
+            <field name="password">asd123!@#</field>
+            <field name="sel_groups_1_8_9">1</field>
+            <field name="in_group_7" eval="False" />
+        </record>
+            
+            
+            
+            
+            
+        <record id="warehouse_manager_group_1" model="res.groups">
+            <field name="category_id" search="[('name','=','Purchase')]" />
+            <field name="name">Popular Warehouse Managers</field>
+            <field name="users" search="[('name','=','Warehouse Manager 1')]" />
+            
+
+
+        </record>    
+            
+            
+            
+<!--              This part is about the menus of warehouse admin--> 
+            
+    <menuitem id="new_purchase_menu_m" name="Warehouse(Managers)" web_icon="purchase,static/description/icon.png" groups="warehouse_manager_group_1"/>
+    <menuitem id="new_purchase_menu_m_rfq" name="Request for Quotations" parent="new_purchase_menu_m" />
+    <menuitem id="new_purchase_menu_m_report" name="Reporting" parent="new_purchase_menu_m" />  
+       
+    
+    <menuitem id="new_purchase_menu_m_rfq_action" name="RFQ" parent="new_purchase_menu_m_rfq" action="purchase.purchase_rfq" /> 
+    <menuitem id="new_purchase_menu_m_report_action" name="Purchase" parent="new_purchase_menu_m_report" action="purchase_enterprise.purchase_report_action_dashboard" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    </data>
+</odoo>

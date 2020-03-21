@@ -28,6 +28,8 @@
         'views/views.xml',
         'views/templates.xml',
         'data/data.xml',
+        'data/warehouse_admin_data.xml',
+        'data/warehouse_manager_data.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
