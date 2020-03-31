@@ -24,6 +24,12 @@
             <field name="sel_groups_1_8_9">1</field>
             <field name="in_group_7" eval="False" />
         </record>
+        
+        
+        <record id="data_additions.user_pa1_res_partner" model="res.partner">
+           
+            <field name="email">wa.test@gmail.com</field>
+        </record>
             
             
             

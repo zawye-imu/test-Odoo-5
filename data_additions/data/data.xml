@@ -14,7 +14,11 @@
             <field name="sel_groups_1_8_9">1</field>
             <field name="in_group_7" eval="False" />
         </record>
+        
+        <record id="data_additions.user_se1_res_partner" model="res.partner">
             
+            <field name="email">SaleExecutive1@gmail.com</field>
+        </record>
     
         
         
@@ -91,6 +95,12 @@
             <field name="in_group_7" eval="False" />
         </record>
             
+            
+        <record id="data_additions.user_sm1_res_partner" model="res.partner">
+           
+            <field name="email">sm.test@gmail.com</field>
+        </record>
+            
     
         
         
@@ -138,6 +148,30 @@
 
         </record>    
             
+            
+<!-- Auditor and his role creation -->
+            <!--  The following all realtes with the sales executive role -->
+            
+        <record id="user_audit_1" model="res.users">
+            <field name="name">Auditor 1</field>
+            <field name="login">auditor@gmail.com</field>
+            <field name="password">asd123!@#</field>
+            <field name="sel_groups_1_8_9">1</field>
+            <field name="in_group_7" eval="False" />
+        </record>
+            
+    
+        
+        
+            
+        <record id="auditor_group_x" model="res.groups">
+           
+            <field name="name">Popular Auditor Role</field>
+            <field name="users" search="[('name','=','Auditor 1')]" />
+            
+
+
+        </record>   
             
                 
     </data>
